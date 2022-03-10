@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Register from './components/register/Register'
+import Register2 from './components/register/Register2'
+import Login from './components/login/Login'
+import Login2 from './components/login/Login2'
+import Seleccion from './components/selection/Seleccion'
+import reportWebVitals from './reportWebVitals'
+import axios from 'axios';
+import './StyleLogin.css'
+import Profile from './components/profile/Profile';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Seleccion />
   </React.StrictMode>,
   document.getElementById('root')
 );
