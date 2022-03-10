@@ -44,7 +44,7 @@ function App() {
         localStorage.setItem('user_id', response.data['user_id']);
         localStorage.setItem('token', response.data['token']);
         console.log(response.data.token);
-        alert("Bienvenido");
+        alert("Bienvenido "+ response.data.first_name);
         window.location="/Profile";
        })
       .catch((error) => {

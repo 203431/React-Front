@@ -1,6 +1,5 @@
 import axios from "axios";
-import React, {Fragment, useState} from "react";
-import { useNavigate } from "react-router-dom";
+import "./Estilo_Profile.css";
 
 function Profile() {
     let token = localStorage.getItem('token');
@@ -145,45 +144,61 @@ function Profile() {
 
     const cerrar_sesion = () => {
         localStorage.clear();
+        let putData = new FormData();
+        axios.put("http://localhost:8000/api/v1/user/data/"+user+"/",putData,{
+            headers:{
+                'Content-Type': 'multipart/form-data',
+                'Authorization': 'Token ' + token,
+            }
+        }).then((response)=>{
+            console.log(response.data);
+            window.location.reload();
+        }).catch((error)=>{
+            alert("No hay sesión iniciada");
+            console.log(error.response.data);
+        })
         window.location="/Login";
     }
 
     return (
-        <div className={Profile.body}>
-            <div className={Profile.profileContainer}>
-                <div className={Profile.options}>
-                    <button id="userTitle">Bienvenido usurario no.{user}</button>
+        <div className= "Profile_body" >
+            <div className="Profile_container">
+                <div className="Profile_options">
+                       <h5>Bienvenido usurario no.{user }</h5>
                 </div>
                 
-                <div className={Profile.profileImg}>
-                    <div className={Profile.bordeImg}></div>
+                <div className="Profile_profileImg">
+                    <div className="Profile_bordeImg"></div>
                     <img alt="error img" id="preview" />
                 </div>
-                <div className={Profile.image}>
+                <div className="Profile_image">
                     <input accept="image/*" type="file" id="img"></input>
-                    <p/>
-                    <button onClick={change_image}>Change Image</button>
-                    <p/>
-                    <button onClick={delete_image}>Delete Image</button>
                 </div>
-                <div className={Profile.profileInfo}>
-                    <div className={Profile.profileField}>
+                <div className="Profile_image">
+                    <p/>
+                    <button onClick={change_image}>Cambiar imagen</button>
+                    <p/>
+                    <button onClick={delete_image}>Borrar la imagen</button>
+                </div>
+                <div className="Profile_profileInfo">
+                    <div className="Profile_profileField">
                         <b>First name: </b><input id="firstName"></input>
                     </div>
-                    <div className={Profile.profileField}>
+                    <div className="Profile_profileField">
                         <b>Last name: </b><input id="lastName"></input>
                     </div>
-                    <div className={Profile.profileField}>
+                    <div className="Profile_profileField">
                         <b>Username: </b><input id="username"></input>
                     </div>
-                    <div className={Profile.profileField}>
+                    <div className="Profile_profileField">
                         <b>E-mail: </b><input id="email"></input>
                     </div>
                 </div>
-                <div className={Profile.update} onClick={change_profile}>
-                    <button>Change Profile</button>
-                    <p></p>
-                    <button className={Profile.backLogin} onClick={cerrar_sesion}>Logout</button>
+                <div className="Profile_update" onClick={change_profile}>
+                    <button>Actualizar perfil</button>
+                </div>
+                <div className="Profile_backLogin">
+                    <button className="Profile_backLogin" onClick={cerrar_sesion}>Cerrar sesión</button>
                 </div>
                 
                 

@@ -1,0 +1,76 @@
+.Profile_body{
+    margin-top: auto;
+    margin: auto;
+    background-color: #84C3BE;
+    padding: 5% 5% 5% 5%;
+    border-radius: 25px;
+}
+
+.Profile_options{
+    display: flex;
+    justify-content: center;
+    text-shadow: 7px 4px 5px rgb(54, 143, 202);
+}
+
+.Profile_container{
+    margin-top: auto;
+}
+
+.Profile_profileImg{
+    display: flex;
+    justify-content: center;
+    margin-top: 3px;
+}
+
+.Profile_bordeImg{
+    display: flex;
+    justify-content:end;
+    max-width: 100px;
+}
+
+.Profile_image{
+    display: flex;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+.Profile_profileInfo{
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.Profile_propileField{
+    display: flex;
+    justify-content: center;
+}
+
+.Profile_update{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    border: 2px;
+    margin: auto;
+}
+
+.Profile_backLogin{
+    display: flex;
+    justify-content: center;
+    margin-top: 6px;
+}
+button{
+    background-color:#D0D0D0;
+}
+
+input{
+    background-color:#BDECB6;
+    border-radius: 6px;
+
+}
+:placeholder-shown{
+    background-color: aquamarine;
+    border-radius: 6px;
+}
+img{
+    max-width: 200px;
+}
