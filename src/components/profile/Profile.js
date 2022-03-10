@@ -139,15 +139,20 @@ function Profile() {
             alert("No se pudieron actualizar los datos");
             console.log(error.response.data);
         })
-
     }
 
+    
+
+    const cerrar_sesion = () => {
+        localStorage.clear();
+        window.location="/Login";
+    }
 
     return (
         <div className={Profile.body}>
             <div className={Profile.profileContainer}>
                 <div className={Profile.options}>
-                    <button id="userTitle">User {user}</button>
+                    <button id="userTitle">Bienvenido usurario no.{user}</button>
                 </div>
                 
                 <div className={Profile.profileImg}>
@@ -156,27 +161,29 @@ function Profile() {
                 </div>
                 <div className={Profile.image}>
                     <input accept="image/*" type="file" id="img"></input>
+                    <p/>
                     <button onClick={change_image}>Change Image</button>
+                    <p/>
                     <button onClick={delete_image}>Delete Image</button>
                 </div>
                 <div className={Profile.profileInfo}>
                     <div className={Profile.profileField}>
-                        <p><b>First name: </b></p><input id="firstName"></input>
+                        <b>First name: </b><input id="firstName"></input>
                     </div>
                     <div className={Profile.profileField}>
-                        <p><b>Last name: </b></p><input id="lastName"></input>
+                        <b>Last name: </b><input id="lastName"></input>
                     </div>
                     <div className={Profile.profileField}>
-                        <p><b>Username: </b></p><input id="username"></input>
+                        <b>Username: </b><input id="username"></input>
                     </div>
                     <div className={Profile.profileField}>
-                        <p><b>E-mail: </b></p><input id="email"></input>
+                        <b>E-mail: </b><input id="email"></input>
                     </div>
                 </div>
                 <div className={Profile.update} onClick={change_profile}>
-                    <button>
-                        Change Profile
-                    </button>
+                    <button>Change Profile</button>
+                    <p></p>
+                    <button className={Profile.backLogin} onClick={cerrar_sesion}>Logout</button>
                 </div>
                 
                 

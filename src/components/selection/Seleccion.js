@@ -1,13 +1,11 @@
-import axios from "axios";
-import React, {Fragment, useState} from "react";
 import Register2 from '../register/Register2'
 import Login2 from '../login/Login2'
-import Profile from "../profile/Profile";
+import Profile from '../profile/Profile';
+
 import {
   BrowserRouter as Router,
   Route,
   Link,
-  Routes,
   Switch,
 } from "react-router-dom";
 
@@ -25,6 +23,11 @@ function App() {
             Register
           </Link>
         </div>
+        <div className="btn-group">
+          <Link to="/Profile" className="btn btn-dark">
+            Profile
+          </Link>
+        </div>
         <hr />
         <Switch>
           <Route exact path="/Login">
@@ -32,6 +35,9 @@ function App() {
           </Route>
           <Route path="/Register">
             <Register2/>
+          </Route>
+          <Route path="/Profile">
+            <Profile/>
           </Route>
         </Switch>
       </div>
